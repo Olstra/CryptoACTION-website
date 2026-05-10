@@ -1,7 +1,7 @@
 import React from "react";
-import eu_layer_img from "../assets/eu_layer.png";
-import pre_mica_img from "../assets/pre_mica.png";
-import mica_img from "../assets/mica_casps.png";
+import eu_layer_img from "../../assets/eu_layer.png";
+import pre_mica_img from "../../assets/pre_mica.png";
+import mica_img from "../../assets/mica_casps.png";
 
 const EULayer: React.FC = () => {
     return (

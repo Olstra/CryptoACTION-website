@@ -1,5 +1,5 @@
 import React from "react";
-import img from "../assets/national_layer.png";
+import img from "../../assets/national_layer.png";
 
 const NationalLayer: React.FC = () => {
     return (

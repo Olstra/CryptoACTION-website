@@ -1,5 +1,5 @@
 import React from "react";
-import img from "../assets/global_layer.png";
+import img from "../../assets/global_layer.png";
 
 const GlobalLayer: React.FC = () => {
     return (

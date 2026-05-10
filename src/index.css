@@ -1,7 +1,9 @@
+@import-normalize;
+
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
+  --text: #FAFAFA;
+  --text-h: #FAFAFA;
+  --bg: #030712;
   --border: #e5e4e7;
   --code-bg: #f4f3ec;
   --accent: #aa3bff;
@@ -68,7 +70,7 @@ body {
 
 h1,
 h2 {
-  font-family: var(--heading);
+  font-family: var(--heading), sans-serif;
   font-weight: 500;
   color: var(--text-h);
 }
@@ -91,21 +93,7 @@ h2 {
     font-size: 20px;
   }
 }
+
 p {
   margin: 0;
-}
-
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
-}
-
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
 }

@@ -1,48 +1,25 @@
-import {BrowserRouter as Router, Routes, Route, NavLink} from "react-router-dom";
-import reactLogo from "./assets/react.svg";
-import GlobalLayer from "./components/GlobalLayer.tsx";
-import NationalLayer from "./components/NationalLayer.tsx";
-import EULayer from "./components/EULayer.tsx";
-import Home from "./components/Home.tsx";
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import "./App.css";
+import Monitoring from "./components/monitoring/Monitoring.tsx";
+import Legal from "./components/legal/Legal.tsx";
+import Tracing from "./components/tracing/Tracing.tsx";
+import About from "./components/About.tsx";
+import Footer from "./components/Footer.tsx";
+import Header from "./components/Header.tsx";
 
 const App: React.FC = () => {
     return (
         <Router>
-            <header className="navbar">
-                <div className="container">
-                    <div className="brand">
-                        <img src={reactLogo} alt="Logo" className="nav-logo"/>
-                        <span className="nav-title">CryptoACTION</span>
-                    </div>
-
-                    <nav className="nav-links">
-                        <NavLink to="/" end
-                                 className={({isActive}) => isActive ? "nav-link active" : "nav-link"}>Home</NavLink>
-                        <NavLink to="/global" className={({isActive}) => isActive ? "nav-link active" : "nav-link"}>Global
-                            Layer</NavLink>
-                        <NavLink to="/national" className={({isActive}) => isActive ? "nav-link active" : "nav-link"}>National
-                            Layer</NavLink>
-                        <NavLink to="/eu" className={({isActive}) => isActive ? "nav-link active" : "nav-link"}>EU
-                            Layer</NavLink>
-                    </nav>
-                </div>
-            </header>
-
+            <Header />
             <main>
                 <Routes>
-                    <Route path="/" element={<Home/>}/>
-                    <Route path="/global" element={<GlobalLayer/>}/>
-                    <Route path="/national" element={<NationalLayer/>}/>
-                    <Route path="/eu" element={<EULayer/>}/>
+                    <Route path="/" element={<Monitoring/>}/>
+                    <Route path="/legal" element={<Legal/>}/>
+                    <Route path="/tracing" element={<Tracing/>}/>
+                    <Route path="/about" element={<About/>}/>
                 </Routes>
             </main>
-
-            <footer className="site-footer">
-                <div className="container">
-                <p>© {new Date().getFullYear()} UZH, Blockchain Center, CryptoACTION</p>
-                </div>
-            </footer>
+            <Footer />
         </Router>
     );
 };
