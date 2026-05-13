@@ -1,13 +1,14 @@
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
-import "./App.css";
-import Monitoring from "./components/monitoring/Monitoring.tsx";
-import Legal from "./components/legal/Legal.tsx";
-import Tracing from "./components/tracing/Tracing.tsx";
-import About from "./components/About.tsx";
-import Footer from "./components/Footer.tsx";
-import Header from "./components/Header.tsx";
+import "./App.sass";
+import {Monitoring} from "./components/Monitoring/Monitoring.tsx";
+import {Legal} from "./components/Legal/Legal.tsx";
+import {Tracing} from "./components/Tracing/Tracing.tsx";
+import {About} from "./components/About/About.tsx";
+import {Footer} from "./components/Footer.tsx";
+import {Header} from "./components/Header/Header.tsx";
+import React from "react";
 
-const App: React.FC = () => {
+export const App: React.FC = () => {
     return (
         <Router>
             <Header />
@@ -23,5 +24,3 @@ const App: React.FC = () => {
         </Router>
     );
 };
-
-export default App;

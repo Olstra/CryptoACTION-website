@@ -1,0 +1,88 @@
+@use "../../styles/colorpalette" as colors
+
+$text-color: black
+$background: white
+
+.table-wrapper
+    overflow-x: auto
+    border-radius: 6px
+    margin-top: 20px
+
+.monitoring-table
+    width: 100%
+    border-collapse: collapse
+    min-width: 720px
+
+.monitoring-table thead th
+    text-align: left
+    padding: 12px 14px
+    background: grey
+    color: white
+    border-bottom: 1px solid grey
+
+.monitoring-table tbody td
+    padding: 12px 14px
+    vertical-align: top
+    border-bottom: 1px solid #f1f5f9
+    font-size: 13px
+    color: $text-color
+    background: $background
+
+.addr-cell .address
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+    max-width: 260px
+
+.risk-pill
+    display: inline-block
+    padding: 6px 10px
+    border-radius: 999px
+    color: white
+    font-weight: 600
+    text-transform: capitalize
+
+.risk-low
+    background: colors.$uzh-apple
+
+.risk-medium
+    background: colors.$uzh-gold
+
+.risk-high
+    background: colors.$uzh-berry
+
+.tx-card
+    background: $background
+    border: 1px solid #eef2f7
+    padding: 10px
+    border-radius: 6px
+    color: $text-color
+    max-width: 720px
+
+.tx-field
+    background: $background
+    margin: 6px 0
+    background: white
+
+.tx-field strong
+    margin-right: 6px
+    color: $text-color
+    font-weight: 700
+
+.tx-list
+    background: $background
+    margin: 6px 0 0 18px
+    padding: 0
+    list-style: disc
+
+.tx-entry
+    background: $background
+
+li
+    background: $background
+    list-style: none
+
+.dash
+    background: $background
+    color: $text-color
+    font-weight: 600

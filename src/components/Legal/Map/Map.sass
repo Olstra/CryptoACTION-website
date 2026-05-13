@@ -1,0 +1,51 @@
+@use "../../../styles/colorpalette" as colors
+
+.division-line
+  height: 2px
+  background: white
+  margin-bottom: 20px
+  margin-top: 10px
+
+.map-mode-fieldset
+  border: none
+  padding: 0
+  margin: 0 0 16px 0
+  display: flex
+  gap: 12px
+  align-items: center
+
+.map-mode
+  display: inline-flex
+  align-items: center
+  gap: 8px
+  padding: 6px 10px
+  border-radius: 8px
+  background: transparent
+  color: colors.$light-grey-1
+  font-weight: 600
+  cursor: pointer
+  user-select: none
+  transition: background .12s, color .12s
+
+  input[type="radio"]
+    position: absolute
+    opacity: 0
+    width: 0
+    height: 0
+    pointer-events: none
+
+  &:before
+    content: ""
+    display: inline-block
+    width: 16px
+    height: 16px
+    border-radius: 50%
+    border: 2px solid colors.$light-grey-1
+    box-sizing: border-box
+
+  &:has(input[type="radio"]:checked)
+    background: rgba(255,200,69,0.06)
+    color: colors.$uzh-gold
+    &:before
+      background: colors.$uzh-gold
+      border-color: white
