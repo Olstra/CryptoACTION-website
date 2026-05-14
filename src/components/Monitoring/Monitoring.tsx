@@ -1,5 +1,5 @@
 import React from "react";
-import "./Monitoring.sass";
+import styles from "./Monitoring.module.sass";
 
 type Tx = {
   entryId: number;
@@ -9,19 +9,19 @@ type Tx = {
 
 type Row = {
   address: string;
-  risk: "low" | "medium" | "high" | string;
+  risk: "Low" | "Medium" | "High" | string;
   transactions?: Tx | null;
 };
 
 const initialData: Row[] = [
   {
     address: "bc1ql49ydapnjafl5t2cp9zqpjwe6pdgmxy98859v2",
-    risk: "low",
+    risk: "Low",
     transactions: null,
   },
   {
     address: "34xp4vRoCGJym3xR7yCVPFHoCNxv4Twseo",
-    risk: "high",
+    risk: "High",
     transactions: {
       entryId: 123,
       caseDescription: "Associated with suspicious transfers to mixer",
@@ -30,7 +30,7 @@ const initialData: Row[] = [
   },
   {
     address: "bc1qgdjqv0av3q56jvd82tkdjpy7gdp9ut8tlqmgrpmv24sq90ecnvqqjwvw97",
-    risk: "medium",
+    risk: "Medium",
     transactions: {
       entryId: 456,
       caseDescription: "Linked to phishing campaign",
@@ -43,8 +43,8 @@ export const Monitoring: React.FC = () => {
   return (
     <section className="content-section">
       <h1>Monitoring</h1>
-      <div className="table-wrapper" role="region">
-        <table className="monitoring-table">
+      <div className={styles.tableWrapper}>
+        <table className={styles.monitoringTable}>
           <thead>
             <tr>
               <th>Address</th>
@@ -55,9 +55,13 @@ export const Monitoring: React.FC = () => {
           <tbody>
             {initialData.map((r) => (
               <tr key={r.address}>
-                <td className="addr-cell">{r.address}</td>
+                <td className={styles.addrCell}>{r.address}</td>
                 <td>
-                  <span className={`risk-pill risk-${r.risk}`}>{r.risk}</span>
+                  <span
+                    className={`${styles.riskPill} ${styles[`risk${r.risk}`]}`}
+                  >
+                    {r.risk}
+                  </span>
                 </td>
                 <td>
                   {r.transactions ? (
@@ -73,7 +77,7 @@ export const Monitoring: React.FC = () => {
                       </p>
                     </div>
                   ) : (
-                    <span className="dash">-</span>
+                    <span className={styles.dash}>-</span>
                   )}
                 </td>
               </tr>

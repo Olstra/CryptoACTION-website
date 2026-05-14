@@ -1,19 +1,17 @@
-.layer-image
+@use "../../styles/gaps" as gaps
+
+.layerImage
   max-width: 100%
   width: 100%
   height: auto
   border-radius: 8px
 
   @media (max-width: 479px)
-    margin: 12px auto
     border-radius: 6px
 
   @media (min-width: 480px) and (max-width: 1023px)
     width: 90%
-    margin: 18px auto
-    border-radius: 8px
 
   @media (min-width: 1024px)
     width: auto
     max-width: 900px
-    margin: 24px auto

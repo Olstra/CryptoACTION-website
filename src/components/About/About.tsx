@@ -1,5 +1,5 @@
 import React from "react";
-import "./About.sass";
+import styles from "./About.module.sass";
 import {
   projectTitle,
   projectSubtitle,
@@ -9,10 +9,10 @@ import {
 export const About: React.FC = () => {
   return (
     <section className="content-section">
-      <h1 className="about-title">{projectTitle}</h1>
-      <p className="about-subtitle">{projectSubtitle}</p>
+      <h1 className={styles.aboutTitle}>{projectTitle}</h1>
+      <p className={styles.aboutSubtitle}>{projectSubtitle}</p>
       <br />
-      <p className="about-p">{projectDescription}</p>
+      <p className={styles.aboutParagraph}>{projectDescription}</p>
     </section>
   );
 };

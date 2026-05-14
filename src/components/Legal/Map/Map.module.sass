@@ -1,20 +1,18 @@
 @use "../../../styles/colorpalette" as colors
 
-.map-mode-fieldset
+.mapModeFieldset
   border: none
-  padding: 0
   display: flex
-  align-items: center
+  flex-direction: column
 
-.map-mode
+.mapMode
   display: inline-flex
   align-items: center
-  gap: 8px
-  padding: 6px 10px
+  padding: 10px
   border-radius: 8px
+  gap: 6px
   background: transparent
   color: colors.$light-grey-1
-  font-weight: 600
   cursor: pointer
   user-select: none
   transition: background .12s, color .12s
@@ -41,3 +39,19 @@
     &:before
       background: colors.$uzh-gold
       border-color: white
+
+.mapImage
+  max-width: 100%
+  width: 100%
+  height: auto
+  border-radius: 8px
+
+  @media (max-width: 479px)
+    border-radius: 6px
+
+  @media (min-width: 480px) and (max-width: 1023px)
+    width: 90%
+
+  @media (min-width: 1024px)
+    width: auto
+    max-width: 900px

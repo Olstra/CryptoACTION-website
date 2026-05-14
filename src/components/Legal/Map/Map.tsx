@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Map.sass";
+import styles from "./Map.module.sass";
 
 import nationalImg from "../../../assets/national_layer.png";
 import euImg from "../../../assets/eu_layer.png";
@@ -16,10 +16,10 @@ export const Map: React.FC = () => {
 
   return (
     <>
-      <fieldset className="map-mode-fieldset">
+      <fieldset className={styles.mapModeFieldset}>
         <h2>Select layer map:</h2>
 
-        <label className="map-mode">
+        <label className={styles.mapMode}>
           <input
             type="radio"
             name="map-mode"
@@ -30,7 +30,7 @@ export const Map: React.FC = () => {
           National
         </label>
 
-        <label className="map-mode">
+        <label className={styles.mapMode}>
           <input
             type="radio"
             name="map-mode"
@@ -41,7 +41,7 @@ export const Map: React.FC = () => {
           EU
         </label>
 
-        <label className="map-mode">
+        <label className={styles.mapMode}>
           <input
             type="radio"
             name="map-mode"
@@ -54,7 +54,11 @@ export const Map: React.FC = () => {
       </fieldset>
 
       <div>
-        <img src={IMAGES[mode]} alt={`${mode} map`} className="layer-image" />
+        <img
+          src={IMAGES[mode]}
+          alt={`${mode} map`}
+          className={styles.mapImage}
+        />
       </div>
     </>
   );
