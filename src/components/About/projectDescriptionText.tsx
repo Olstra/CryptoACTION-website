@@ -1,10 +1,10 @@
 export const projectTitle = `
     CryptoACTION: Combating Cryptocurrency-Facilitated Crime and Terrorism with Interoperable, Trustworthy, AI-Enhanced Collaborative Tools, and Improved Information Sharing, Operations, and Training for LEAs
-`
+`;
 
 export const projectSubtitle = `
     (Funding project: HORIZON-CL3-2024-FCT-01-08 Tracing of cryptocurrencies transactions related to criminal purposes) 
-`
+`;
 
 export const projectDescription = `
     Background:
@@ -26,4 +26,4 @@ export const projectDescription = `
     O5. Engage LEAs, Europol (including the Europol Innovation Lab), and INTERPOL to participate in co-design and validation processes for LEA tools, automated benchmarks, and training courses, and to contribute to discussions on regulatory recommendations and broader improvements in the anti-CFCT landscape.
     
     O6. Promote sustainable collaboration between industry, academia, and law-enforcement governmental organisations, and engage with initiatives that share similar objectives
-`
+`;
