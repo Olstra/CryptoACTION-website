@@ -1,17 +1,13 @@
 import React from "react";
-import styles from "./Legal.module.sass";
-import img from "../../assets/layers_overview.png";
 import { Map } from "./Map/Map.tsx";
+import { LayersExplanation } from "./LayersExplanation.tsx";
 
 export const Legal: React.FC = () => {
   return (
     <section className="content-section">
       <h1>Regulatory Frameworks</h1>
+      <LayersExplanation />
       <Map />
-      <div>
-        <h2>Layers explanation:</h2>
-        <img src={img} alt="overview" className={styles.layerImage} />
-      </div>
     </section>
   );
 };

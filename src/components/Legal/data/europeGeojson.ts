@@ -45928,6 +45928,7 @@ export const europeGeojson: Array<Feature> = [
       SUBREGION: 155,
       LON: 7.908,
       LAT: 46.861,
+      Score: 6.0,
     },
     geometry: {
       type: "Polygon",
