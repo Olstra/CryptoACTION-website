@@ -7,10 +7,7 @@ export const Legal: React.FC = () => {
   return (
     <section className="content-section">
       <h1>Regulatory Frameworks</h1>
-      <div>
-        <h2>Layers:</h2>
-        <Map />
-      </div>
+      <Map />
       <div>
         <h2>Layers explanation:</h2>
         <img src={img} alt="overview" className={styles.layerImage} />

@@ -1,5 +1,16 @@
 @use "../../../styles/colorpalette" as colors
 
+span
+  background: white // in order to see zoom-in/zoom-out buttons over black background
+
+a
+  background: white // in order to see 'leaflet' button over black background
+
+.mapContainer
+  display: flex
+  height: 480px
+  width: 100%
+
 .mapModeFieldset
   border: none
   display: flex
@@ -39,19 +50,3 @@
     &:before
       background: colors.$uzh-gold
       border-color: white
-
-.mapImage
-  max-width: 100%
-  width: 100%
-  height: auto
-  border-radius: 8px
-
-  @media (max-width: 479px)
-    border-radius: 6px
-
-  @media (min-width: 480px) and (max-width: 1023px)
-    width: 90%
-
-  @media (min-width: 1024px)
-    width: auto
-    max-width: 900px

@@ -1,65 +1,61 @@
-import React, { useState } from "react";
+import { GeoJSON, MapContainer } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
 import styles from "./Map.module.sass";
+import { europeGeojson } from "./europeGeojson.ts";
+import type { FeatureCollection } from "geojson";
+import { useState } from "react";
+import { ScopeOptions, type ScopeType } from "./Scope.tsx";
 
-import nationalImg from "../../../assets/national_layer.png";
-import euImg from "../../../assets/eu_layer.png";
-import globalImg from "../../../assets/global_layer.png";
-
-const IMAGES: Record<string, string> = {
-  national: nationalImg,
-  eu: euImg,
-  global: globalImg,
+const featureCollection: FeatureCollection = {
+  type: "FeatureCollection",
+  features: europeGeojson,
 };
 
-export const Map: React.FC = () => {
-  const [mode, setMode] = useState<"national" | "eu" | "global">("national");
+export const Map = () => {
+  const [mode, setMode] = useState<ScopeType>(ScopeOptions.National);
 
   return (
     <>
-      <fieldset className={styles.mapModeFieldset}>
-        <h2>Select layer map:</h2>
-
+      <div>
         <label className={styles.mapMode}>
           <input
             type="radio"
             name="map-mode"
             value="national"
-            checked={mode === "national"}
-            onChange={() => setMode("national")}
+            checked={mode === ScopeOptions.National}
+            onChange={() => setMode(ScopeOptions.National)}
           />
-          National
+          {ScopeOptions.National}
         </label>
-
         <label className={styles.mapMode}>
           <input
             type="radio"
             name="map-mode"
-            value="eu"
-            checked={mode === "eu"}
-            onChange={() => setMode("eu")}
+            value={ScopeOptions.Eu}
+            checked={mode === ScopeOptions.Eu}
+            onChange={() => setMode(ScopeOptions.Eu)}
           />
-          EU
+          {ScopeOptions.Eu}
         </label>
-
         <label className={styles.mapMode}>
           <input
             type="radio"
             name="map-mode"
-            value="global"
-            checked={mode === "global"}
-            onChange={() => setMode("global")}
+            value={ScopeOptions.Global}
+            checked={mode === ScopeOptions.Global}
+            onChange={() => setMode(ScopeOptions.Global)}
           />
-          Global
+          {ScopeOptions.Global}
         </label>
-      </fieldset>
-
-      <div>
-        <img
-          src={IMAGES[mode]}
-          alt={`${mode} map`}
-          className={styles.mapImage}
-        />
       </div>
+
+      <MapContainer
+        className={styles.mapContainer}
+        center={[47.25966, 11.40038]}
+        zoom={4}
+      >
+        <GeoJSON data={featureCollection}></GeoJSON>
+      </MapContainer>
     </>
   );
 };
