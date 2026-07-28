@@ -1,16 +1,17 @@
-@use "../../styles/colorpalette" as colors
-@use "../../styles/gaps" as gaps
+@use "../../styles/colorpalette" as *
+@use "../../styles/gaps" as *
+@use "../../styles/_mixins" as *
 
-$tab-bg: colors.$uzh-gold
-$active-bg: colors.$uzh-gold
+$tab-bg: $uzh-blue
+$active-bg: $uzh-gold
 $text-color: white
-$background-color: colors.$uzh-blue
+$background-color: $uzh-blue
 
 .siteHeader
   display: flex
   align-items: center
   justify-content: space-between
-  padding: gaps.$padding gaps.$padding 0 gaps.$padding
+  padding: $padding $padding 0 $padding
   background: $background-color
   border-bottom: 1px solid #e6e6e6
   position: sticky
@@ -43,28 +44,29 @@ $background-color: colors.$uzh-blue
 
 ul.tabs
   background: $background-color
-  width: 420px
-  margin-right: gaps.$margin
+  width: auto
+  margin-right: $margin
   list-style: none
   overflow: hidden
   padding: 0
   display: flex
   align-items: flex-end
 
-ul.tabs li
-  background: $background-color
-  flex: auto
-  text-align: center
+  li
+    display: flex
+    align-items: center
+    background: $background-color
+    flex: auto
+    text-align: center
 
-.tabs li:first-child a.switch
-  border-top-left-radius: 8px
-
-.tabs li:last-child a.switch
-  border-top-right-radius: 8px
+    &:not(:last-child)::after
+      content: "|"
+      margin: 0 8px
+      color: white
 
 a.switch
   background: $tab-bg
-  color: black
+  color: $text-color
   display: block
   cursor: pointer
   text-decoration: none
@@ -72,21 +74,17 @@ a.switch
   font-size: 18px
   opacity: 0.8
   transition: padding 0.2s ease, margin 0.2s ease
-  border-bottom: 0
 
-a.switch:hover
-  opacity: 0.9
-  padding-top: 15px
+  &:hover
+    opacity: 0.9
 
-a.switch.activeTab
-  opacity: 1
-  border-bottom: 0
-  padding-top: 20px
-  font-weight: bold
+  &.activeTab
+    opacity: 1
+    font-weight: bold
 
 .hamburgerContainer
   background: transparent
-  margin-right: gaps.$margin
+  margin-right: $margin
 
 .hamburger
   display: none
@@ -103,11 +101,11 @@ a.switch.activeTab
   margin: 4px 0
   transition: transform 0.2s ease, opacity 0.2s ease
 
-@media (max-width: 768px)
+@include tablet
   .wrapper
     position: absolute
     top: 60px
-    right: gaps.$padding
+    right: $padding
     width: 35%
     background: $background-color
     border-radius: 8px
@@ -118,25 +116,9 @@ a.switch.activeTab
   .wrapper.open
     max-height: 320px
 
-  a.switch
-    color: $text-color
-    border: none
-    border-radius: 0
-    background: transparent
-
-  a.switch.activeTab
-    border: none
-    border-radius: 0
-    border-bottom: 1px solid $text-color
-
   .tabs
     flex-direction: column
     width: 100%
-
-  .switch
-    display: block
-    padding: 12px 16px
-    border-radius: 6px
 
   .hamburger
     display: block
