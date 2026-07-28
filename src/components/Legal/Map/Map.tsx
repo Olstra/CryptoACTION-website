@@ -1,7 +1,7 @@
 import { GeoJSON, MapContainer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import styles from "./Map.module.sass";
-import { europeGeojson } from "../data/europeGeojson.ts";
+import { europeGeojson } from "../../../geojson/europeGeojson.ts";
 import type { Feature, FeatureCollection } from "geojson";
 import { useState } from "react";
 import { ScopeOptions, type ScopeType } from "../data/Scope.ts";
@@ -92,11 +92,7 @@ export const Map = () => {
         </label>
       </div>
 
-      <MapContainer
-        className={styles.mapContainer}
-        center={[10.695759, 49.547426]}
-        zoom={4}
-      >
+      <MapContainer className={styles.mapContainer} center={[55, 17]} zoom={4}>
         <GeoJSON
           data={featureCollection}
           style={(feature) => getStyle(feature)}

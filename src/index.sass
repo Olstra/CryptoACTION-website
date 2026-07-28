@@ -1,5 +1,5 @@
-@use "styles/colorpalette" as colors
-@use "styles/gaps" as gaps
+@use "styles/colorpalette" as *
+@use "styles/gaps" as *
 
 h1
   margin-bottom: 1rem
@@ -10,6 +10,6 @@ h2
   margin-bottom: 1rem
 
 .content-section
-  padding: gaps.$padding
-  color: colors.$text
-  margin: gaps.$margin
+  padding: $padding
+  color: $text-color
+  margin: $margin
