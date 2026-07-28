@@ -8,8 +8,8 @@ const makeClass = (isActive: boolean) =>
 
 const tabs = [
   { id: "tabOne", label: "Monitoring", path: "/" },
-  { id: "tabTwo", label: "Legal", path: "/legal" },
-  { id: "tabThree", label: "Tracing", path: "/tracing" },
+  { id: "tabTwo", label: "Regulatory Landscape", path: "/legal" },
+  { id: "tabThree", label: "Tools & Landscape", path: "/tracing" },
   { id: "tabFour", label: "About", path: "/about" },
 ];
 

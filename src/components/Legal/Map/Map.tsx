@@ -94,7 +94,7 @@ export const Map = () => {
 
       <MapContainer
         className={styles.mapContainer}
-        center={[49.8153, 6.1296]}
+        center={[10.695759, 49.547426]}
         zoom={4}
       >
         <GeoJSON
