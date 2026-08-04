@@ -1,6 +1,15 @@
 @use "styles/colorpalette" as *
 @use "styles/gaps" as *
 
+html, body
+  margin: 0
+  padding: 0
+  background-color: $background-color
+  color: $text-color
+
+h1, h2, h3, h4, h5, h6, p, span, a, li
+  color: $text-color
+
 h1
   margin-bottom: 1rem
   border-bottom: 1px solid white
@@ -10,7 +19,16 @@ h2
   margin-bottom: 1rem
 
 .content-section
-  padding-left: $padding
-  padding-right: $padding
-  color: $text-color
-  margin: $margin * 0.75 $margin $margin
+  width: 100%
+  max-width: 1200px
+  margin: 0 auto
+  box-sizing: border-box
+  background-color: $background-color
+
+  padding: 2rem 2rem
+
+  @media (min-width: 640px)
+    padding: 2rem 3rem
+
+  @media (min-width: 1024px)
+    padding: 3rem 5rem

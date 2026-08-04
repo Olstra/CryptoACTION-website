@@ -1,15 +1,85 @@
-$text-color: white
+@use "../../styles/colorpalette" as *
+
+.aboutContainer
+  max-width: 1000px
+  line-height: 1.7
 
 .aboutTitle
-  color: $text-color
-  text-align: justify
-  text-align-last: left
+  font-size: 2rem
+  font-weight: 700
+  margin-bottom: 0.5rem
+  text-align: left
+  line-height: 1.2
 
 .aboutSubtitle
-  color: grey
+  color: #9ca3af
+  font-size: 1rem
+  margin-top: 0
+  margin-bottom: 2rem
+  text-align: left
+
+.sectionBlock
+  margin-top: 2rem
+
+.sectionHeading
+  color: $text-color
+  font-size: 1.5rem
+  font-weight: 600
+  margin-bottom: 1rem
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1)
+  padding-bottom: 0.5rem
 
 .aboutParagraph
   color: $text-color
   text-align: justify
   text-align-last: left
   hyphens: auto
+  margin-bottom: 1.2rem
+  font-size: 1.05rem
+  opacity: 0.9
+
+.objectivesGrid
+  display: grid
+  grid-template-columns: 1fr
+  gap: 1.2rem
+  margin-top: 1.5rem
+
+  @media (min-width: 768px)
+    grid-template-columns: repeat(2, 1fr)
+
+.objectiveCard
+  background: $background-color
+  border: 1px solid rgba(255, 255, 255, 0.1)
+  border-radius: 8px
+  padding: 1.25rem
+  display: flex
+  gap: 1rem
+  transition: transform 0.2s ease
+
+  &:hover
+    transform: translateY(-2px)
+    border-color: rgba(255, 255, 255, 0.2)
+
+.objectiveCode
+  background: rgba(59, 130, 246, 0.2)
+  color: #60a5fa
+  font-weight: 700
+  font-size: 0.9rem
+  height: 32px
+  width: 32px
+  display: flex
+  align-items: center
+  justify-content: center
+  border-radius: 6px
+  flex-shrink: 0
+
+.objectiveTitle
+  font-size: 1.1rem
+  font-weight: 600
+  margin-bottom: 0.3rem
+
+.objectiveDesc
+  color: #d1d5db
+  font-size: 0.95rem
+  text-align: left
+  line-height: 1.5
