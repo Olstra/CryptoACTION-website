@@ -226,6 +226,12 @@ export const Map = () => {
         </div>
       </div>
 
+      {/* Selected Layer Info Banner right above the map */}
+      <div className={styles.activeLayerIndicator}>
+        <span className={styles.indicatorLabel}>Current View:</span>
+        <span className={styles.indicatorValue}>{activeLayerLabel}</span>
+      </div>
+
       <MapContainer className={styles.mapContainer} center={[55, 17]} zoom={4}>
         <GeoJSON
           key={mode}
