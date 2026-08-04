@@ -1,4 +1,4 @@
-@use "../../../styles/colorpalette" as colors
+@use "../../../styles/colorpalette" as *
 
 span
   background: white // in order to see zoom-in/zoom-out buttons over black background
@@ -18,37 +18,122 @@ a
   display: flex
   flex-direction: column
 
+.titleContainer
+  display: flex
+  flex-direction: column
+  margin-bottom: 12px
+
+  h2
+    margin: 0 0 4px 0
+    color: white
+
+.helperText
+  font-size: 0.8rem
+  color: rgba(255, 255, 255, 0.6)
+  letter-spacing: 0.3px
+  background: transparent !important
+
+// Flex container wrapper for all control rows
+.controlsContainer
+  display: flex
+  flex-direction: column
+  margin-bottom: 16px
+
+// Individual flex row for items
+.flexRow
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: center
+  width: 100%
+  gap: 16px
+  margin-bottom: 8px
+
+.flexRowSub
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: center
+  width: 100%
+  gap: 16px
+  margin-bottom: 8px
+
+.layerLabel
+  font-weight: 600
+  color: $light-grey-1
+  font-size: 0.95rem
+  background: $background-color
+  flex: 1
+
+.countryHeader
+  text-align: center
+  font-weight: 600
+  font-size: 1.2rem
+  color: $light-grey-1
+  margin: 0
+  flex: 1
+
+// Flex item spacer acting as 'x' empty box
+.flexSpacer
+  flex: 1
+
+// Horizontal line separator styling
+.sectionDivider
+  width: 100%
+  border: none
+  border-top: 1px solid rgba(255, 255, 255, 0.15)
+  margin: 12px 0
+
+// Current active layer indicator banner styling
+.activeLayerIndicator
+  display: flex
+  align-items: center
+  gap: 8px
+  padding: 8px 12px
+  background: rgba(212, 175, 55, 0.12)
+  border-left: 3px solid rgba(212, 175, 55, 0.8)
+  margin-bottom: 8px
+  font-size: 0.9rem
+  color: white
+
+  .indicatorLabel
+    color: rgba(255, 255, 255, 0.6)
+    background: transparent !important
+
+  .indicatorValue
+    font-weight: 600
+    color: rgb(212, 175, 55)
+    background: transparent !important
+
 .mapMode
   display: inline-flex
   align-items: center
-  padding: 10px
-  border-radius: 8px
-  gap: 6px
-  background: transparent
-  color: colors.$light-grey-1
+  justify-content: center
+  padding: 12px 24px
+  border-radius: 0
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)
+  gap: 8px
+  background: rgba(212, 175, 55, 0.25)
+  border: none
+  color: $light-grey-1
   cursor: pointer
   user-select: none
   transition: background .12s, color .12s
+  flex: 1
+  box-sizing: border-box
+  font-size: 0.95rem
+  font-family: inherit
 
-  input[type="radio"]
-    position: absolute
-    opacity: 0
-    width: 0
-    height: 0
-    pointer-events: none
+  &:hover
+    background: rgba(212, 175, 55, 0.4)
+    color: white
 
-  &:before
-    content: ""
-    display: inline-block
-    width: 16px
-    height: 16px
-    border-radius: 50%
-    border: 2px solid colors.$light-grey-1
-    box-sizing: border-box
+  &.active
+    background: rgba(212, 175, 55, 0.9)
+    color: #111111
+    font-weight: 600
 
-  &:has(input[type="radio"]:checked)
-    background: rgba(255,200,69,0.06)
-    color: colors.$uzh-gold
-    &:before
-      background: colors.$uzh-gold
-      border-color: white
+.buttonIcon
+  width: 16px
+  height: 16px
+  object-fit: contain

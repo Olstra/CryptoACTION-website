@@ -71,3 +71,6 @@ export default defineConfig([
   },
 ]);
 ```
+
+## GeoJson
+TODO.. describe how to get maps from geojson

@@ -1,6 +1,6 @@
-import type { CountryCompliance } from "./dataPreparator.ts";
+import type { CountryLayerCompliance } from "./dataPreparator.ts";
 
-export const euCompliances: CountryCompliance[] = [
+export const euCompliances: CountryLayerCompliance[] = [
   {
     Country: "Austria",
     MiCA: "Yes",
