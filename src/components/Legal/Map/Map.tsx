@@ -9,8 +9,6 @@ import { mergeComplianceIntoFeatures } from "../data/dataPreparator.ts";
 import { Layer } from "leaflet";
 import { COLOR_MAP_EU } from "../data/colorMaps.ts";
 
-import globalIcon from "../../../assets/map_icon_global_layer.png";
-
 import { euCompliances } from "../data/euLayerData.ts";
 import { globalCompliances } from "../data/globalLayerData.ts";
 import { regulatoryFrameworks } from "../data/nationalLayerData.ts";
@@ -84,7 +82,7 @@ export const Map = () => {
     if (props?.NAME) {
       let popupContent = `
         <div style="background: white">
-          <p style="background: white">
+          <p style="background: white; color: black">
             <span style="font-weight: bold">${props.NAME}</span><br>
       `;
 
@@ -165,7 +163,6 @@ export const Map = () => {
             onClick={() => setMode(ScopeOptions.Global)}
             title="Click to view Global layer data"
           >
-            <img src={globalIcon} alt="Global" className={styles.buttonIcon} />
             {ScopeOptions.Global}
           </button>
           <div className={styles.flexSpacer} />
