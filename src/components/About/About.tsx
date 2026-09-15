@@ -23,7 +23,7 @@ export const About: React.FC = () => {
       </div>
 
       <div className={styles.sectionBlock}>
-        <h2 className={styles.sectionHeading}>Objectives</h2>
+        <h2 className={styles.sectionHeading}>Project Deliverables</h2>
         <div className={styles.objectivesGrid}>
           {projectObjectives.map((obj) => (
             <div key={obj.code} className={styles.objectiveCard}>

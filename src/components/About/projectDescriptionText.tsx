@@ -1,50 +1,37 @@
 export const projectTitle =
-  "CryptoACTION: Combating Cryptocurrency-Facilitated Crime and Terrorism with Interoperable, Trustworthy, AI-Enhanced Collaborative Tools, and Improved Information Sharing, Operations, and Training for LEAs";
+  "Crypto-Assets Regulatory and Tracing Tools Landscape";
 
 export const projectSubtitle =
-  "(Funding project: HORIZON-CL3-2024-FCT-01-08 Tracing of cryptocurrencies transactions related to criminal purposes)";
+  "A student project contributing to the CryptoAction initiative at the University of Zurich (UZH) Blockchain and Distributed Ledger Technologies (BDLT) Chair";
 
 export const projectBackground = [
-  "The advent of cryptocurrencies unlocked opportunities for legitimate innovation but at the same time offered a new platform for facilitating criminal and terrorist activities, offering a degree of perceived anonymity and freedom from centralised control and oversight.",
-  "Law-enforcement agencies (LEAs) face significant challenges in adjusting to the quickly evolving technological developments and emerging applications of cryptocurrencies, cross-border transactions further compounding these challenges. At the same time, legislation in different countries lacks harmonisation and still plays catch-up to the technological developments.",
-  "Inescapably, to be effective, the response to the emerging (possibly cross-border) cryptocurrency-facilitated criminal/terrorist (CFCT) activities must match their characteristics, i.e. it must evolve continuously both in terms of technology and in terms of operational guidelines and training; moreover it must foster collaboration across international borders and across the different stakeholders on the side of the law (LEAs, regulators, law makers, legitimate cryptocurrency ecosystem and financial sector actors, telecommunication and technology market actors, etc.) and possibly lead to strategic regulatory steps.",
+  "This project was completed as part of an Independent Study module for my Master's degree at the Department of Informatics at the University of Zurich. It was supervised by the chair of Blockchain and Distributed Ledger Technologies.",
+  "The work serves as an academic contribution to CryptoAction, an interdisciplinary EU-funded project aimed at equipping law enforcement agencies with tools to combat cryptocurrency-facilitated fraud and terrorism financing.",
 ];
 
 export const projectObjectives = [
   {
     code: "O1",
-    title: "Interdisciplinary Study",
+    title: "Regulatory Data Compilation",
     description:
-      "Conduct an interdisciplinary study of (i) current state and emerging trends in CFCT, (ii) the international regulatory landscape, and (iii) the anti-CFCT landscape. The study will identify strengths, weaknesses, and evidence-based recommendations.",
+      "Assist in compiling and structuring a comprehensive dataset covering the crypto-asset anti-money laundering (AML) legislation of 30 European countries across Global and EU layers.",
   },
   {
     code: "O2",
-    title: "Lawful Tools & Methodologies",
+    title: "Interactive Mapping",
     description:
-      "Deliver improved lawful tools and methodologies shaped by LEA requirements for detecting/investigating CFCT activity, identifying parties, and tracing funds for lawful seizure, aligning with the EU requirements for Trustworthy AI.",
+      "Develop Python scripts to transform tabular regulatory datasets into interactive geographical heatmaps, providing an intuitive visual overview of MiCA and AML compliance.",
   },
   {
     code: "O3",
-    title: "International Federated Dataspace",
+    title: "Tracing Tool Taxonomy",
     description:
-      "Engage with LEAs and relevant stakeholders to build an international federated anti-CFCT dataspace, strengthening global cooperation mechanisms offered by INTERPOL and Europol.",
+      "Develop a structured taxonomy to categorize the fragmented landscape of blockchain tracing tools by their functional capabilities, such as heuristic clustering, taint analysis, and machine learning.",
   },
   {
     code: "O4",
-    title: "Cryptorange & Capacity Building",
+    title: "Dashboard Development",
     description:
-      "Create the world's first cryptorange and design collaborative capacity-building methodology, training curricula, and courses for LEAs, prosecutors, and the judiciary.",
-  },
-  {
-    code: "O5",
-    title: "Co-design & Validation",
-    description:
-      "Engage LEAs, Europol, and INTERPOL to participate in co-design and validation processes for tools, automated benchmarks, and training courses.",
-  },
-  {
-    code: "O6",
-    title: "Sustainable Collaboration",
-    description:
-      "Promote sustainable collaboration between industry, academia, and law-enforcement governmental organisations, engaging with initiatives sharing similar objectives.",
+      "Design and build this interactive project website using React, to ensure the regulatory maps and tracing taxonomy are accessible and easy to navigate.",
   },
 ];

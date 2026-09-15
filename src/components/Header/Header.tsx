@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import logo from "../../assets/cryptoaction-logo.png";
+import logo from "../../assets/logo-cryptoaction.png";
 import styles from "./Header.module.sass";
 
 const makeClass = (isActive: boolean) =>
@@ -9,7 +9,7 @@ const makeClass = (isActive: boolean) =>
 const tabs = [
   { id: "tabOne", label: "Monitoring", path: "/" },
   { id: "tabTwo", label: "Regulatory Landscape", path: "/legal" },
-  { id: "tabThree", label: "Tools & Landscape", path: "/tracing" },
+  { id: "tabThree", label: "Tracing Taxonomy", path: "/tracing" },
   { id: "tabFour", label: "About", path: "/about" },
 ];
 

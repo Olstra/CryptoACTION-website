@@ -1,6 +1,6 @@
 export const ScopeOptions = {
   National: "National",
-  Eu: "Eu",
+  Eu: "EU",
   Global: "Global",
   MicaCasps: "MicaCasps",
   PreMica: "PreMica",
