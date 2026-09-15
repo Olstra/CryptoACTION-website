@@ -1,138 +1,10 @@
 import React, { useState, useMemo } from "react";
 import styles from "./Tracing.module.sass";
-import { parseBibtex, type Publication } from "./bibParser";
+import { parseBibtex, type Publication } from "./bibParser.ts";
 import bibtexRawData from "./data/references.bib?raw";
-
-interface SubNode {
-  id: string;
-  label: string;
-}
-
-interface NodeItem {
-  id: string;
-  label: string;
-  subNodes?: SubNode[];
-}
-
-interface PipelineStage {
-  id: string;
-  title: string;
-  nodes: NodeItem[];
-}
-
-const MAIN_PIPELINE_STAGES: PipelineStage[] = [
-  {
-    id: "monitoring",
-    title: "Monitoring",
-    nodes: [
-      { id: "legal-regulations", label: "Legal Regulations" },
-      { id: "risk-indicators", label: "Risk Indicators" },
-      {
-        id: "monitoring-tools",
-        label: "Monitoring Tools",
-        subNodes: [
-          { id: "monitoring-ai", label: "AI-Based" },
-          { id: "monitoring-rule", label: "Rule-Based" },
-        ],
-      },
-    ],
-  },
-  {
-    id: "tracing",
-    title: "Tracing",
-    nodes: [
-      { id: "rule-based", label: "Rule-Based" },
-      { id: "clustering", label: "Clustering" },
-      { id: "heuristic-based", label: "Heuristic-Based" },
-      { id: "bitcoin", label: "Bitcoin (UTXO)" },
-      {
-        id: "graph-based",
-        label: "Graph-Based",
-        subNodes: [{ id: "visualization-tools", label: "Visualization Tools" }],
-      },
-      {
-        id: "nlp",
-        label: "NLP",
-        subNodes: [
-          { id: "named-entity-recognition", label: "Named Entity Recognition" },
-          { id: "sentiment-analysis", label: "Sentiment Analysis" },
-          { id: "other-nlp", label: "Other NLP techniques" },
-        ],
-      },
-      {
-        id: "machine-learning",
-        label: "Machine Learning",
-        subNodes: [
-          { id: "learning-tx", label: "Learning via TX history" },
-          {
-            id: "learning-offchain",
-            label: "Learning via off-chain data sources",
-          },
-        ],
-      },
-      { id: "generative-ai", label: "Generative AI" },
-    ],
-  },
-  {
-    id: "attribution",
-    title: "Attribution",
-    nodes: [
-      {
-        id: "address-identification",
-        label: "Address Identification Services",
-        subNodes: [
-          {
-            id: "data-legal",
-            label: "Data acquisition through legal intervention",
-          },
-          { id: "data-open", label: "Data acquisition through open sources" },
-        ],
-      },
-      { id: "entity-databases", label: "Entity Databases" },
-    ],
-  },
-  {
-    id: "legal-action",
-    title: "Legal Action",
-    nodes: [],
-  },
-  {
-    id: "prevention",
-    title: "Prevention",
-    nodes: [],
-  },
-];
-
-const ALL_IN_ONE_STAGE: PipelineStage = {
-  id: "all-in-one-tools",
-  title: "All-in-one Tools",
-  nodes: [],
-};
-
-const NODE_TAG_MAPPING: Record<string, string> = {
-  monitoring: "(process step) monitoring",
-  tracing: "(process step) tracing",
-  attribution: "(process step) attribution",
-  "legal-action": "(process step) evidence management",
-  prevention: "(process step) prevention",
-  "all-in-one-tools": "(process step) all in one tools",
-
-  "rule-based": "(method) rule-based",
-  clustering: "(method) clustering",
-  "heuristic-based": "(method) heuristic-based",
-  bitcoin: "(token) bitcoin",
-  "graph-based": "(method) graph-based",
-  "visualization-tools": "visualization tool",
-  nlp: "(method) nlp",
-  "named-entity-recognition": "named entity recognition",
-  "sentiment-analysis": "(method) sentiment analysis",
-  "machine-learning": "(method) machine learning",
-  "generative-ai": "(method) gen-ai",
-  "monitoring-ai": "(method) ai-based",
-  "monitoring-rule": "(method) rule-based",
-  "evidence-management": "evidence management",
-  "entity-databases": "database",
-};
+import { MAIN_PIPELINE_STAGES, ALL_IN_ONE_STAGE } from "./diagram/diagramData";
+import { NODE_TAG_MAPPING } from "./diagram/nodeTagMapping.ts";
+import type { PipelineStage } from "./diagram/diagram.types.ts";
 
 export const Tracing: React.FC = () => {
   const [selectedNodes, setSelectedNodes] = useState<string[]>([]);
@@ -165,7 +37,9 @@ export const Tracing: React.FC = () => {
       for (const node of stage.nodes) {
         if (node.id === nodeId) return node.label;
         if (node.subNodes) {
-          const sub = node.subNodes.find((s) => s.id === nodeId);
+          const sub = node.subNodes.find(
+            (s: { id: string }) => s.id === nodeId,
+          );
           if (sub) return sub.label;
         }
       }
