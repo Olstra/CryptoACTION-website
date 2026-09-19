@@ -1,37 +1,30 @@
-export const projectTitle =
-  "Crypto-Assets Regulatory and Tracing Tools Landscape";
-
-export const projectSubtitle =
-  "A student project contributing to the CryptoAction initiative at the University of Zurich (UZH) Blockchain and Distributed Ledger Technologies (BDLT) Chair";
+export const projectTitle = "CryptoLexTracer";
 
 export const projectBackground = [
-  "This project was completed as part of an Independent Study module for my Master's degree at the Department of Informatics at the University of Zurich. It was supervised by the chair of Blockchain and Distributed Ledger Technologies.",
-  "The work serves as an academic contribution to CryptoAction, an interdisciplinary EU-funded project aimed at equipping law enforcement agencies with tools to combat cryptocurrency-facilitated fraud and terrorism financing.",
+  "CryptoLexTracer was developed to provide a comprehensive overview of global crypto-asset regulation implementation progress across multiple countries, as well as a structured catalog of existing blockchain tracing tools. By mapping both the legal and technical ecosystems, this platform helps law enforcement agencies, researchers, and policy makers navigate available forensic resources and understand regional compliance standards.",
+  "Addressing Cryptocurrency-Facilitated Crime and Terrorism (CFCT) is critical as digital asset flows scale rapidly. In 2025 alone, illicit cryptocurrency wallets received an estimated $158 billion in incoming value—setting an all-time high. Driven by sophisticated laundering techniques like chain-hopping and mixers, these illicit financial flows cause billions in losses annually and hamper global security when bad actors exploit non-KYC platforms and pseudonymous transfers.",
+  "Combating these threats requires a unified regulatory view, because the global legal landscape is still highly fragmented. Different jurisdictions classify virtual assets in different ways and apply very different AML/CFT compliance frameworks, which creates major cross-border challenges for law enforcement. It is also important to know which blockchain tracing and forensic tools are available, since blockchain money laundering investigations can be very different from traditional ones.",
 ];
 
 export const projectObjectives = [
   {
-    code: "O1",
-    title: "Regulatory Data Compilation",
+    title: "Lex",
+    emoji: "⚖️",
+    path: "/lex",
     description:
-      "Assist in compiling and structuring a comprehensive dataset covering the crypto-asset anti-money laundering (AML) legislation of 30 European countries across Global and EU layers.",
+      "A visualization tool that shows progress on global crypto-asset regulation implementation.",
   },
   {
-    code: "O2",
-    title: "Interactive Mapping",
+    title: "Monitoring",
+    emoji: "🚦",
+    path: "/monitoring",
     description:
-      "Develop Python scripts to transform tabular regulatory datasets into interactive geographical heatmaps, providing an intuitive visual overview of MiCA and AML compliance.",
+      "In the future, you will see a real-time transaction monitoring tool here that helps you spot suspicious activity on different blockchains.",
   },
   {
-    code: "O3",
-    title: "Tracing Tool Taxonomy",
-    description:
-      "Develop a structured taxonomy to categorize the fragmented landscape of blockchain tracing tools by their functional capabilities, such as heuristic clustering, taint analysis, and machine learning.",
-  },
-  {
-    code: "O4",
-    title: "Dashboard Development",
-    description:
-      "Design and build this interactive project website using React, to ensure the regulatory maps and tracing taxonomy are accessible and easy to navigate.",
+    title: "Tracer",
+    emoji: "🔦",
+    path: "/tracer",
+    description: "Overview of different blockchain tracing and forensic tools.",
   },
 ];

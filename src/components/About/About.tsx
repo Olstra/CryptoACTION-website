@@ -1,39 +1,47 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./About.module.sass";
 import {
   projectTitle,
-  projectSubtitle,
   projectBackground,
   projectObjectives,
-} from "./projectDescriptionText.tsx";
+} from "./projectDescriptionText";
 
 export const About: React.FC = () => {
   return (
     <section className="content-section">
-      <h1 className={styles.aboutTitle}>{projectTitle}</h1>
-      <p className={styles.aboutSubtitle}>{projectSubtitle}</p>
+      <div className={styles.aboutContainer}>
+        <h1 className={styles.aboutTitle}>{projectTitle}</h1>
 
-      <div className={styles.sectionBlock}>
-        <h2 className={styles.sectionHeading}>Background</h2>
-        {projectBackground.map((paragraph, index) => (
-          <p key={index} className={styles.aboutParagraph}>
-            {paragraph}
-          </p>
-        ))}
-      </div>
-
-      <div className={styles.sectionBlock}>
-        <h2 className={styles.sectionHeading}>Project Deliverables</h2>
-        <div className={styles.objectivesGrid}>
-          {projectObjectives.map((obj) => (
-            <div key={obj.code} className={styles.objectiveCard}>
-              <span className={styles.objectiveCode}>{obj.code}</span>
-              <div>
-                <h3 className={styles.objectiveTitle}>{obj.title}</h3>
-                <p className={styles.objectiveDesc}>{obj.description}</p>
-              </div>
-            </div>
+        <div className={styles.sectionBlock}>
+          {projectBackground.map((paragraph, index) => (
+            <p key={index} className={styles.aboutParagraph}>
+              {paragraph}
+            </p>
           ))}
+        </div>
+
+        <div className={styles.sectionBlock}>
+          <h2 className={styles.sectionHeading}>
+            What you can find on this website:
+          </h2>
+          <div className={styles.objectivesGrid}>
+            {projectObjectives.map((obj) => (
+              <Link
+                key={obj.title}
+                to={obj.path}
+                className={styles.objectiveCard}
+              >
+                <div className={styles.headerRow}>
+                  {obj.emoji && (
+                    <div className={styles.emojiBox}>{obj.emoji}</div>
+                  )}
+                  <div className={styles.objectiveCode}>{obj.title}</div>
+                </div>
+                <p className={styles.objectiveDesc}>{obj.description}</p>
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </section>

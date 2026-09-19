@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import logo from "../../assets/logo-cryptoaction.png";
 import styles from "./Header.module.sass";
 
 const makeClass = (isActive: boolean) =>
   `${styles.switch} ${isActive ? styles.activeTab : ""}`.trim();
 
 const tabs = [
-  { id: "tabOne", label: "Monitoring", path: "/" },
-  { id: "tabTwo", label: "Regulatory Landscape", path: "/legal" },
-  { id: "tabThree", label: "Tracing Taxonomy", path: "/tracing" },
-  { id: "tabFour", label: "About", path: "/about" },
+  { id: "tabFour", label: "Home", path: "/" },
+  { id: "tabTwo", label: "Lex", path: "/lex" },
+  { id: "tabOne", label: "Monitoring", path: "/monitoring" },
+  { id: "tabThree", label: "Tracer", path: "/tracer" },
 ];
 
 export const Header: React.FC = () => {
@@ -19,8 +18,7 @@ export const Header: React.FC = () => {
   return (
     <header className={styles.siteHeader}>
       <div className={styles.brand}>
-        <img src={logo} alt="CryptoACTION logo" className={styles.navLogo} />
-        <span className={styles.navTitle}>CryptoACTION</span>
+        <span className={styles.navTitle}>CryptoLexTracer</span>
       </div>
 
       <div className={styles.hamburgerContainer}>

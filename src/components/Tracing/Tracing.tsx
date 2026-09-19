@@ -125,7 +125,7 @@ export const Tracing: React.FC = () => {
   return (
     <div className={styles.tracingContainer}>
       <div className={styles.header}>
-        <h2>Blockchain Analysis Pipeline & Literature</h2>
+        <h2>Blockchain Tracing Tools Taxonomy</h2>
         <p>
           Interactive taxonomy of tools, methods, and process steps across
           blockchain architectures.
@@ -142,10 +142,9 @@ export const Tracing: React.FC = () => {
               )}
             </React.Fragment>
           ))}
-        </div>
-
-        <div className={styles.specialStageWrapper}>
-          {renderStageBox(ALL_IN_ONE_STAGE)}
+          <div className={styles.specialStageWrapper}>
+            {renderStageBox(ALL_IN_ONE_STAGE)}
+          </div>
         </div>
 
         <div className={styles.flowchartBottomRow}>

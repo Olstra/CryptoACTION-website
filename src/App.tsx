@@ -14,10 +14,10 @@ export const App: React.FC = () => {
       <Header />
       <main>
         <Routes>
-          <Route path="/" element={<Monitoring />} />
-          <Route path="/legal" element={<Legal />} />
-          <Route path="/tracing" element={<Tracing />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/" element={<About />} />
+          <Route path="/lex" element={<Legal />} />
+          <Route path="/monitoring" element={<Monitoring />} />
+          <Route path="/tracer" element={<Tracing />} />
         </Routes>
       </main>
       <Footer />
