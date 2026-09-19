@@ -5,7 +5,8 @@ Addressing Cryptocurrency-Facilitated Crime and Terrorism (CFCT) is critical as 
 
 Combating these threats requires a unified regulatory view, because the global legal landscape is still highly fragmented. Different jurisdictions classify virtual assets in different ways and apply very different AML/CFT compliance frameworks, which creates major cross-border challenges for law enforcement. It is also important to know which blockchain tracing and forensic tools are available, since blockchain money laundering investigations can be very different from traditional ones.
 
-What you can find on this website:
+What you can find on this website:  
+
 ⚖️ Lex
 A visualization tool that shows progress on global crypto-asset regulation implementation.
 
